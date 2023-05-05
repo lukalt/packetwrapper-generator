@@ -3,7 +3,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 {% for item in IMPORTS %}
-    import {{ item }};
+import {{ item }};
 {% endfor %}
 public class {{ CLASS_NAME }} extends AbstractPacket {
 
@@ -18,5 +18,6 @@ public class {{ CLASS_NAME }} extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    {{ BODY }}
+{{ BODY }}
+
 }

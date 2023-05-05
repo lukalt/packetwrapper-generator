@@ -15,6 +15,18 @@
         <spigot.version>1.19.4-R0.1-SNAPSHOT</spigot.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+
     <build>
         <resources>
             <resource>
@@ -23,6 +35,7 @@
                 <directory>${basedir}/src/main/resources</directory>
                 <includes>
                     <include>*</include>
+                    <include>*/*</include>
                 </includes>
             </resource>
         </resources>
@@ -50,13 +63,6 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>${spigot.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>${spigot.version}</version>
-            <classifier>remapped-mojang</classifier>
             <scope>provided</scope>
         </dependency>
         <dependency>
