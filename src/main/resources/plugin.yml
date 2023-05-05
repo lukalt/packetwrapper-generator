@@ -1,0 +1,7 @@
+name: ProtocolWrapperGenerator
+version: ${project.version}
+api-version: 1.19
+author: lukalt
+main: lt.lukasa.packetwrapper.generator.Main
+depend:
+  - ProtocolLib
