@@ -36,8 +36,14 @@ public class Main extends JavaPlugin {
 
         File outputFolder = new File("output");
         outputFolder.mkdirs();
-        Jinjava jinjava = new Jinjava();
-        String template;
+        Jinjava jinjava;
+        ClassLoader curClassLoader = Thread.currentThread().getContextClassLoader();
+        try {
+            Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
+            jinjava = new Jinjava();
+        } finally {
+            Thread.currentThread().setContextClassLoader(curClassLoader);
+        }        String template;
         try {
             template = Resources.toString(Resources.getResource("templates/BaseWrapper.java.j2"), Charsets.UTF_8);
             for (PacketType type : PacketType.values()) {
