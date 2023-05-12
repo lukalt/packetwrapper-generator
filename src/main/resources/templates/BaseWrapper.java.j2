@@ -7,11 +7,10 @@ import {{ item }};
 {% endfor %}
 public class {{ CLASS_NAME }} extends AbstractPacket {
 
-    public static final PacketType TYPE = PacketType.Login.Client.CUSTOM_PAYLOAD;
+    public static final PacketType TYPE = PacketType.{{ PACKET_TYPE }};
 
     public {{ CLASS_NAME }}() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public {{ CLASS_NAME }}(PacketContainer packet) {
